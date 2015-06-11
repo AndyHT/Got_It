@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF0496ED1B29B15300F15ED4 /* FindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0496EC1B29B15300F15ED4 /* FindModel.swift */; };
 		EF065C061B2927830042A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C051B2927830042A613 /* AppDelegate.swift */; };
 		EF065C081B2927830042A613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C071B2927830042A613 /* ViewController.swift */; };
 		EF065C0B1B2927830042A613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF065C091B2927830042A613 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		EF065C101B2927830042A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */; };
 		EF065C1B1B2927830042A613 /* GotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C1A1B2927830042A613 /* GotTests.swift */; };
 		EF065C261B2927830042A613 /* GotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C251B2927830042A613 /* GotUITests.swift */; };
+		EFF5AC871B29AF9200E62991 /* FindListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5AC861B29AF9200E62991 /* FindListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF0496EC1B29B15300F15ED4 /* FindModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindModel.swift; sourceTree = "<group>"; };
 		EF065C021B2927830042A613 /* Got.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Got.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF065C051B2927830042A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF065C071B2927830042A613 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		EF065C211B2927830042A613 /* GotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF065C251B2927830042A613 /* GotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotUITests.swift; sourceTree = "<group>"; };
 		EF065C271B2927830042A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFF5AC861B29AF9200E62991 /* FindListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				EF065C051B2927830042A613 /* AppDelegate.swift */,
 				EF065C071B2927830042A613 /* ViewController.swift */,
+				EFF5AC861B29AF9200E62991 /* FindListTableViewController.swift */,
 				EF065C091B2927830042A613 /* Main.storyboard */,
 				EF065C0C1B2927830042A613 /* Assets.xcassets */,
 				EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */,
 				EF065C111B2927830042A613 /* Info.plist */,
+				EF0496EC1B29B15300F15ED4 /* FindModel.swift */,
 			);
 			path = Got;
 			sourceTree = "<group>";
@@ -255,8 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0496ED1B29B15300F15ED4 /* FindModel.swift in Sources */,
 				EF065C081B2927830042A613 /* ViewController.swift in Sources */,
 				EF065C061B2927830042A613 /* AppDelegate.swift in Sources */,
+				EFF5AC871B29AF9200E62991 /* FindListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +491,7 @@
 				EF065C2C1B2927830042A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF065C2D1B2927830042A613 /* Build configuration list for PBXNativeTarget "GotTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +500,7 @@
 				EF065C2F1B2927830042A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF065C301B2927830042A613 /* Build configuration list for PBXNativeTarget "GotUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +509,7 @@
 				EF065C321B2927830042A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
