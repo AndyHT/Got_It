@@ -15,7 +15,7 @@
 		EF065C101B2927830042A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */; };
 		EF065C1B1B2927830042A613 /* GotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C1A1B2927830042A613 /* GotTests.swift */; };
 		EF065C261B2927830042A613 /* GotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C251B2927830042A613 /* GotUITests.swift */; };
-		EFF5AC871B29AF9200E62991 /* FindListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5AC861B29AF9200E62991 /* FindListTableViewController.swift */; };
+		EFF9BED41B2ACCCB0019D8C7 /* FindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		EF065C211B2927830042A613 /* GotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF065C251B2927830042A613 /* GotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotUITests.swift; sourceTree = "<group>"; };
 		EF065C271B2927830042A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFF5AC861B29AF9200E62991 /* FindListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindListTableViewController.swift; sourceTree = "<group>"; };
+		EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			children = (
 				EF065C051B2927830042A613 /* AppDelegate.swift */,
 				EF065C071B2927830042A613 /* ViewController.swift */,
-				EFF5AC861B29AF9200E62991 /* FindListTableViewController.swift */,
+				EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */,
 				EF065C091B2927830042A613 /* Main.storyboard */,
 				EF065C0C1B2927830042A613 /* Assets.xcassets */,
 				EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */,
@@ -261,10 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF9BED41B2ACCCB0019D8C7 /* FindTableViewController.swift in Sources */,
 				EF0496ED1B29B15300F15ED4 /* FindModel.swift in Sources */,
 				EF065C081B2927830042A613 /* ViewController.swift in Sources */,
 				EF065C061B2927830042A613 /* AppDelegate.swift in Sources */,
-				EFF5AC871B29AF9200E62991 /* FindListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

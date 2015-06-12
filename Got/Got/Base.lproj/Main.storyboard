@@ -21,7 +21,7 @@
                                 <rect key="frame" x="20" y="348" width="200" height="200"/>
                                 <state key="normal" title="Find It" backgroundImage="bubble_blue"/>
                                 <connections>
-                                    <segue destination="yht-kR-ggT" kind="push" id="cfY-VK-VrC"/>
+                                    <segue destination="N7e-P2-n97" kind="push" id="IOb-0w-RQI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRN-7p-teu">
@@ -40,6 +40,54 @@
             </objects>
             <point key="canvasLocation" x="298" y="1254"/>
         </scene>
+        <!--Find IT-->
+        <scene sceneID="DFl-md-j5k">
+            <objects>
+                <tableViewController id="N7e-P2-n97" customClass="FindTableViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LiX-MQ-qzD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="findCell" textLabel="Rqu-mp-TRv" detailTextLabel="ig3-al-6aL" style="IBUITableViewCellStyleSubtitle" id="isK-8E-jZh">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isK-8E-jZh" id="Q5g-n1-4z0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="101" contentMode="left" text="Bicycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rqu-mp-TRv">
+                                            <rect key="frame" x="15" y="6" width="52" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="102" contentMode="left" text="06/10/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ig3-al-6aL">
+                                            <rect key="frame" x="15" y="25.5" width="60" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="N7e-P2-n97" id="hBj-ki-gfs"/>
+                            <outlet property="delegate" destination="N7e-P2-n97" id="anN-f2-oBT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Find IT" id="8z9-t5-h2n"/>
+                    <connections>
+                        <outlet property="findTableView" destination="LiX-MQ-qzD" id="fQu-XN-xKe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hi-Dv-aO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="2020"/>
+        </scene>
         <!--Mark IT-->
         <scene sceneID="uDJ-b7-Td5">
             <objects>
@@ -57,77 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZz-WX-VdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="2045"/>
-        </scene>
-        <!--Find IT-->
-        <scene sceneID="uKE-C5-fPV">
-            <objects>
-                <tableViewController id="yht-kR-ggT" customClass="FindListTableViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="azZ-k4-2ud">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="findCell" textLabel="7cB-Y5-9Em" detailTextLabel="Ryn-6b-YeN" style="IBUITableViewCellStyleSubtitle" id="Jyy-6l-VMl">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jyy-6l-VMl" id="EEH-h7-ahE">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Bicycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7cB-Y5-9Em">
-                                            <rect key="frame" x="15" y="6" width="52" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="06/10/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ryn-6b-YeN">
-                                            <rect key="frame" x="15" y="25.5" width="60" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Rs5-8r-exS" kind="push" id="Ke1-7C-MCf"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yht-kR-ggT" id="zos-dH-43p"/>
-                            <outlet property="delegate" destination="yht-kR-ggT" id="zFh-75-W76"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Find IT" id="aar-I4-Vfp"/>
-                    <connections>
-                        <outlet property="findListTableView" destination="azZ-k4-2ud" id="7pQ-8L-NmL"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RBf-vm-JGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="915" y="1254"/>
-        </scene>
-        <!--Find IT-->
-        <scene sceneID="ejw-1W-LvA">
-            <objects>
-                <viewController id="Rs5-8r-exS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tNe-oT-Rsl"/>
-                        <viewControllerLayoutGuide type="bottom" id="hSs-Yg-4Zv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kJc-0e-3ao">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Find IT" id="JjV-9f-EP0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wKQ-Nu-WSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1497" y="1254"/>
+            <point key="canvasLocation" x="889" y="1254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ea3-BR-jdO">
