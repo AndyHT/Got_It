@@ -91,7 +91,7 @@
         <!--Mark IT-->
         <scene sceneID="uDJ-b7-Td5">
             <objects>
-                <viewController id="ZQ6-BI-8qi" sceneMemberID="viewController">
+                <viewController id="ZQ6-BI-8qi" customClass="MarkViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q0d-Bl-rFN"/>
                         <viewControllerLayoutGuide type="bottom" id="V59-2O-Nnj"/>
@@ -99,13 +99,59 @@
                     <view key="view" contentMode="scaleToFill" id="jYq-JP-OLX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-fw-dMI">
+                                <rect key="frame" x="114" y="466" width="92" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Mark"/>
+                                <connections>
+                                    <action selector="markIt:" destination="ZQ6-BI-8qi" eventType="touchUpInside" id="oZ9-4Y-beE"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-4V-jqn">
+                                <rect key="frame" x="40" y="136" width="240" height="240"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-zp-u4o">
+                                <rect key="frame" x="150" y="214" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正在获取位置信息..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eni-If-62X">
+                                <rect key="frame" x="20" y="347" width="280" height="64"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mark IT" id="Zvi-Qt-GXr"/>
+                    <connections>
+                        <outlet property="cameraView" destination="9gD-4V-jqn" id="U8D-ds-DZm"/>
+                        <outlet property="loading" destination="eni-If-62X" id="EHZ-Gn-aMT"/>
+                        <outlet property="loadingIndicator" destination="VxH-zp-u4o" id="N4M-8Q-LGn"/>
+                        <outlet property="markBtn" destination="bCF-fw-dMI" id="spR-Uw-YJc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZz-WX-VdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760" y="1254"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="SqC-FF-I8p">
+            <objects>
+                <viewController id="5x3-ws-9cn" customClass="DetailViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wwH-Wa-w9S"/>
+                        <viewControllerLayoutGuide type="bottom" id="YmM-BA-6YG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WoJ-EK-bPp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D36-C4-OCh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Up3-Fh-xt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="1254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ea3-BR-jdO">
