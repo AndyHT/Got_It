@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
-var finds:[FindModel] = []
+import CoreData
 
 class FindTableViewController: UITableViewController {
 
     @IBOutlet var findTableView: UITableView!
+    
+    var coordinates = [NSManagedObject]()
     
     func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
@@ -30,10 +31,10 @@ class FindTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        finds = [FindModel(title: "Bicycle", date: dateFromString("2015-06-10"), latitude: 30.0, longitude: 100.0),
-            FindModel(title: "5'th Coffee", date: dateFromString("2015-05-30"), latitude: 30.0, longitude: 110.0),
-            FindModel(title: "Library", date: dateFromString("2015-05-30"), latitude: 30.0, longitude: 111.0),
-            FindModel(title: "Hotel", date: dateFromString("2015-05-29"), latitude: 30.9, longitude: 111.1)]
+//        finds = [FindModel(title: "Bicycle", date: dateFromString("2015-06-10"), latitude: 30.0, longitude: 100.0),
+//            FindModel(title: "5'th Coffee", date: dateFromString("2015-05-30"), latitude: 30.0, longitude: 110.0),
+//            FindModel(title: "Library", date: dateFromString("2015-05-30"), latitude: 30.0, longitude: 111.0),
+//            FindModel(title: "Hotel", date: dateFromString("2015-05-29"), latitude: 30.9, longitude: 111.1)]
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,25 +57,27 @@ class FindTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return finds.count
+        return coordinates.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.findTableView.dequeueReusableCellWithIdentifier("findCell")! as UITableViewCell
 
-        let find = finds[indexPath.row]
+        let coordinate = coordinates[indexPath.row]
+        
         let title = cell.viewWithTag(101) as! UILabel
         let date = cell.viewWithTag(102) as! UILabel
         
-        title.text = find.title
+        title.text = coordinate.valueForKey("id") as! String?
         
         let locale = NSLocale.currentLocale()
         let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd", options: 0, locale: locale)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = dateFormat
-        date.text = dateFormatter.stringFromDate(find.date)
+        let markDate = coordinate.valueForKey("date") as! NSDate
+        date.text = dateFormatter.stringFromDate(markDate)
 
         return cell
     }
@@ -92,9 +95,10 @@ class FindTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            finds.removeAtIndex(indexPath.row)
+            coordinates.removeAtIndex(indexPath.row)
+            //需要将数据库里的数据删除
+        
             
-//            self.findTableView.reloadData()
             self.findTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
 
         }
