@@ -12,8 +12,7 @@ import CoreData
 class FindTableViewController: UITableViewController {
 
     @IBOutlet var findTableView: UITableView!
-    
-    var coordinates = [NSManagedObject]()
+    var markedItemsArray = [NSManagedObject]()
     
     func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
@@ -40,6 +39,26 @@ class FindTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //1
+//        let appDelegate =
+//        UIApplication.sharedApplication().delegate as! AppDelegate
+//        
+//        let managedContext = appDelegate.managedObjectContext
+//        
+//        //2
+//        let fetchRequest = NSFetchRequest(entityName:"Coordinates")
+//        
+//        //3
+//        let fetchedResults:[AnyObject]
+//        
+//        do {
+//            try fetchedResults = managedContext.executeFetchRequest(fetchRequest)
+//            let results = fetchedResults as! [NSManagedObject]
+//            markedItemsArray = results
+//        } catch {
+//            print("Could not fetch \(error)")
+//        }
+        
         findTableView.reloadData()
     }
 
@@ -57,26 +76,28 @@ class FindTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return coordinates.count
+        return markedItemsArray.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.findTableView.dequeueReusableCellWithIdentifier("findCell")! as UITableViewCell
 
-        let coordinate = coordinates[indexPath.row]
+        let markItem = markedItemsArray[indexPath.row]
         
         let title = cell.viewWithTag(101) as! UILabel
         let date = cell.viewWithTag(102) as! UILabel
         
-        title.text = coordinate.valueForKey("id") as! String?
+        title.text = markItem.valueForKey("id") as! String?
         
         let locale = NSLocale.currentLocale()
         let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd", options: 0, locale: locale)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = dateFormat
-        let markDate = coordinate.valueForKey("date") as! NSDate
+        let markDate = markItem.valueForKey("time") as! NSDate
+        //添加viewWillAppear就会导致crash
+        
         date.text = dateFormatter.stringFromDate(markDate)
 
         return cell
@@ -95,7 +116,7 @@ class FindTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            coordinates.removeAtIndex(indexPath.row)
+            markedItemsArray.removeAtIndex(indexPath.row)
             //需要将数据库里的数据删除
         
             
@@ -129,4 +150,65 @@ class FindTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func addCoordinate(sender: AnyObject) {
+        let alert = UIAlertController(title: "New name",
+            message: "Add a new name",
+            preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Save",
+            style: .Default) { (action: UIAlertAction!) -> Void in
+                
+                let textField = alert.textFields![0] as UITextField
+                self.saveMarkedItemInCoreData(textField.text!)
+                self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+            style: .Default) { (action: UIAlertAction!) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler {
+            (textField: UITextField!) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert,
+            animated: true,
+            completion: nil)
+    }
+    
+    func saveMarkedItemInCoreData(id: String) {
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Coordinates",
+            inManagedObjectContext: managedContext)
+        
+        if let entityGot = entity {
+            let markedItem = NSManagedObject(entity: entityGot, insertIntoManagedObjectContext:managedContext)
+
+            //3
+            let tempDate = dateFromString("2015-06-10")
+            let tempLatitude = 30.0
+            let tempLongitude = 110.0
+            markedItem.setValue(id, forKey: "id")
+            markedItem.setValue(tempDate, forKey: "time")
+            markedItem.setValue(tempLatitude, forKey: "latitude")
+            markedItem.setValue(tempLongitude, forKey: "longitude")
+            
+            //4
+            do {
+                try managedContext.save()
+            } catch {
+                print("Could not save with error")
+            }
+            //5
+            markedItemsArray.append(markedItem)
+        }
+    }
 }

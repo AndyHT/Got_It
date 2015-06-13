@@ -79,7 +79,13 @@
                             <outlet property="delegate" destination="N7e-P2-n97" id="anN-f2-oBT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Find IT" id="8z9-t5-h2n"/>
+                    <navigationItem key="navigationItem" title="Find IT" id="8z9-t5-h2n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mxu-Jy-05b">
+                            <connections>
+                                <action selector="addCoordinate:" destination="N7e-P2-n97" id="mbh-oU-9Vk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="findTableView" destination="LiX-MQ-qzD" id="fQu-XN-xKe"/>
                     </connections>
