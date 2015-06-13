@@ -15,6 +15,8 @@
 		EF065C101B2927830042A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */; };
 		EF065C1B1B2927830042A613 /* GotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C1A1B2927830042A613 /* GotTests.swift */; };
 		EF065C261B2927830042A613 /* GotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C251B2927830042A613 /* GotUITests.swift */; };
+		EFDB48EF1B2C6B3F00CE4740 /* Got.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */; };
+		EFDB48F41B2C6BC900CE4740 /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB48F31B2C6BC900CE4740 /* Coordinates.m */; };
 		EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */; };
 		EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */; };
 		EFF9BED41B2ACCCB0019D8C7 /* FindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */; };
@@ -52,6 +54,11 @@
 		EF065C211B2927830042A613 /* GotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF065C251B2927830042A613 /* GotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotUITests.swift; sourceTree = "<group>"; };
 		EF065C271B2927830042A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFDB48EE1B2C6B3F00CE4740 /* Got.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Got.xcdatamodel; sourceTree = "<group>"; };
+		EFDB48F01B2C6BC900CE4740 /* Got-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Got-Bridging-Header.h"; sourceTree = "<group>"; };
+		EFDB48F11B2C6BC900CE4740 /* Coordinates+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coordinates+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EFDB48F21B2C6BC900CE4740 /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		EFDB48F31B2C6BC900CE4740 /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
 		EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
 		EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +122,11 @@
 				EF065C111B2927830042A613 /* Info.plist */,
 				EF0496EC1B29B15300F15ED4 /* FindModel.swift */,
 				EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */,
+				EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */,
+				EFDB48F11B2C6BC900CE4740 /* Coordinates+CoreDataProperties.h */,
+				EFDB48F21B2C6BC900CE4740 /* Coordinates.h */,
+				EFDB48F31B2C6BC900CE4740 /* Coordinates.m */,
+				EFDB48F01B2C6BC900CE4740 /* Got-Bridging-Header.h */,
 			);
 			path = Got;
 			sourceTree = "<group>";
@@ -199,6 +211,7 @@
 		EF065BFA1B2927830042A613 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = huoteng;
 				TargetAttributes = {
@@ -271,7 +284,9 @@
 				EFF9BED41B2ACCCB0019D8C7 /* FindTableViewController.swift in Sources */,
 				EF0496ED1B29B15300F15ED4 /* FindModel.swift in Sources */,
 				EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */,
+				EFDB48F41B2C6BC900CE4740 /* Coordinates.m in Sources */,
 				EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */,
+				EFDB48EF1B2C6B3F00CE4740 /* Got.xcdatamodeld in Sources */,
 				EF065C081B2927830042A613 /* ViewController.swift in Sources */,
 				EF065C061B2927830042A613 /* AppDelegate.swift in Sources */,
 			);
@@ -413,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Got/Info.plist;
@@ -421,6 +437,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng.Got;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Got/Got-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Got/Info.plist;
@@ -436,6 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng.Got;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Got/Got-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -527,6 +547,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EFDB48EE1B2C6B3F00CE4740 /* Got.xcdatamodel */,
+			);
+			currentVersion = EFDB48EE1B2C6B3F00CE4740 /* Got.xcdatamodel */;
+			path = Got.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EF065BFA1B2927830042A613 /* Project object */;
 }
