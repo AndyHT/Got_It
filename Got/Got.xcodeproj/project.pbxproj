@@ -16,6 +16,7 @@
 		EF065C1B1B2927830042A613 /* GotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C1A1B2927830042A613 /* GotTests.swift */; };
 		EF065C261B2927830042A613 /* GotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C251B2927830042A613 /* GotUITests.swift */; };
 		EF06600A1B2CE857000D55AF /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0660091B2CE857000D55AF /* Coordinates.m */; };
+		EF28EAEC1B2E611C00359DDC /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28EAEB1B2E611C00359DDC /* FindViewController.swift */; };
 		EFDB48EF1B2C6B3F00CE4740 /* Got.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */; };
 		EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */; };
 		EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */; };
@@ -57,6 +58,7 @@
 		EF0660071B2CE857000D55AF /* Coordinates+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coordinates+CoreDataProperties.h"; sourceTree = "<group>"; };
 		EF0660081B2CE857000D55AF /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
 		EF0660091B2CE857000D55AF /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
+		EF28EAEB1B2E611C00359DDC /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		EFDB48EE1B2C6B3F00CE4740 /* Got.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Got.xcdatamodel; sourceTree = "<group>"; };
 		EFDB48F01B2C6BC900CE4740 /* Got-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Got-Bridging-Header.h"; sourceTree = "<group>"; };
 		EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				EF065C051B2927830042A613 /* AppDelegate.swift */,
 				EF065C071B2927830042A613 /* ViewController.swift */,
 				EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */,
+				EF28EAEB1B2E611C00359DDC /* FindViewController.swift */,
 				EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */,
 				EF065C091B2927830042A613 /* Main.storyboard */,
 				EF065C0C1B2927830042A613 /* Assets.xcassets */,
@@ -286,6 +289,7 @@
 				EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */,
 				EF06600A1B2CE857000D55AF /* Coordinates.m in Sources */,
 				EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */,
+				EF28EAEC1B2E611C00359DDC /* FindViewController.swift in Sources */,
 				EFDB48EF1B2C6B3F00CE4740 /* Got.xcdatamodeld in Sources */,
 				EF065C081B2927830042A613 /* ViewController.swift in Sources */,
 				EF065C061B2927830042A613 /* AppDelegate.swift in Sources */,

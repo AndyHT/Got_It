@@ -13,6 +13,7 @@ class FindTableViewController: UITableViewController {
 
     @IBOutlet var findTableView: UITableView!
     var markedItemsArray = [NSManagedObject]()
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
@@ -30,34 +31,27 @@ class FindTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-//        finds = [FindModel(title: "Bicycle", date: dateFromString("2015-06-10"), latitude: 30.0, longitude: 100.0),
-//            FindModel(title: "5'th Coffee", date: dateFromString("2015-05-30"), latitude: 30.0, longitude: 110.0),
-//            FindModel(title: "Library", date: dateFromString("2015-05-30"), latitude: 30.0, longitude: 111.0),
-//            FindModel(title: "Hotel", date: dateFromString("2015-05-29"), latitude: 30.9, longitude: 111.1)]
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         //1
-//        let appDelegate =
-//        UIApplication.sharedApplication().delegate as! AppDelegate
-//        
-//        let managedContext = appDelegate.managedObjectContext
-//        
-//        //2
-//        let fetchRequest = NSFetchRequest(entityName:"Coordinates")
-//        
-//        //3
-//        let fetchedResults:[AnyObject]
-//        
-//        do {
-//            try fetchedResults = managedContext.executeFetchRequest(fetchRequest)
-//            let results = fetchedResults as! [NSManagedObject]
-//            markedItemsArray = results
-//        } catch {
-//            print("Could not fetch \(error)")
-//        }
+        let managedContext = self.appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Coordinates")
+        
+        //3
+        let fetchedResults:[AnyObject]
+        
+        do {
+            try fetchedResults = managedContext.executeFetchRequest(fetchRequest)
+            let results = fetchedResults as! [NSManagedObject]
+            markedItemsArray = results
+        } catch {
+            print("Could not fetch \(error)")
+        }
         
         findTableView.reloadData()
     }
@@ -86,19 +80,19 @@ class FindTableViewController: UITableViewController {
         let markItem = markedItemsArray[indexPath.row]
         
         let title = cell.viewWithTag(101) as! UILabel
-        let date = cell.viewWithTag(102) as! UILabel
+//        let date = cell.viewWithTag(102) as! UILabel
         
         title.text = markItem.valueForKey("id") as! String?
         
-        let locale = NSLocale.currentLocale()
-        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd", options: 0, locale: locale)
+//        当读到没有date的数据时代码会crash
+//        let locale = NSLocale.currentLocale()
+//        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd", options: 0, locale: locale)
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = dateFormat
-        let markDate = markItem.valueForKey("time") as! NSDate
-        //添加viewWillAppear就会导致crash
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = dateFormat
+//        let markDate = markItem.valueForKey("time") as! NSDate//添加viewWillAppear就会导致crash
         
-        date.text = dateFormatter.stringFromDate(markDate)
+//        date.text = dateFormatter.stringFromDate(markDate)
 
         return cell
     }
@@ -116,9 +110,17 @@ class FindTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            markedItemsArray.removeAtIndex(indexPath.row)
+            let deletedItem = markedItemsArray.removeAtIndex(indexPath.row)
+            
             //需要将数据库里的数据删除
-        
+            let managedContext = self.appDelegate.managedObjectContext
+            managedContext.deleteObject(deletedItem)
+            
+            do {
+                try managedContext.save()
+            } catch {
+                print("there is an error when deleted item")
+            }
             
             self.findTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
 
@@ -181,9 +183,7 @@ class FindTableViewController: UITableViewController {
     
     func saveMarkedItemInCoreData(id: String) {
         //1
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
+        let managedContext = self.appDelegate.managedObjectContext
         
         //2
         let entity =  NSEntityDescription.entityForName("Coordinates",
