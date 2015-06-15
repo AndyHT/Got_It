@@ -32,7 +32,9 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        if ios8() {
+        let deviceVersion = DeviceVersion()
+        
+        if deviceVersion.version >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
         locationManager.startUpdatingLocation()
@@ -57,12 +59,17 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
         
         //if location changed, update currentLocations
         if (location.horizontalAccuracy > 0) {
+            
+            //可以考虑将currentLocation设置为optional
+            
+            //如果是第一次得到Coordinate, 此时currentLocations还是空数组
             if isFirstGetCoordinate {
                 setViewAfterGetLocationSuccess()
                 isFirstGetCoordinate = false
                 currentLocations.append(CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
 
             }
+            //为了优化数据结构大小
             currentLocations[0] = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
 
         }

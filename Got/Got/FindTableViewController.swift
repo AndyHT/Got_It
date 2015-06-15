@@ -8,12 +8,14 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 class FindTableViewController: UITableViewController {
 
     @IBOutlet var findTableView: UITableView!
     var markedItemsArray = [NSManagedObject]()
     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//    var targetLocation: CLLocation? = nil
     
     func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
@@ -80,19 +82,19 @@ class FindTableViewController: UITableViewController {
         let markItem = markedItemsArray[indexPath.row]
         
         let title = cell.viewWithTag(101) as! UILabel
-//        let date = cell.viewWithTag(102) as! UILabel
+        let date = cell.viewWithTag(102) as! UILabel
         
         title.text = markItem.valueForKey("id") as! String?
         
-//        当读到没有date的数据时代码会crash
-//        let locale = NSLocale.currentLocale()
-//        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd", options: 0, locale: locale)
+        //当读到没有date的数据时代码会crash
+        let locale = NSLocale.currentLocale()
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd", options: 0, locale: locale)
         
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = dateFormat
-//        let markDate = markItem.valueForKey("time") as! NSDate//添加viewWillAppear就会导致crash
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        let markDate = markItem.valueForKey("time") as! NSDate//添加viewWillAppear就会导致crash
         
-//        date.text = dateFormatter.stringFromDate(markDate)
+        date.text = dateFormatter.stringFromDate(markDate)
 
         return cell
     }
@@ -142,15 +144,32 @@ class FindTableViewController: UITableViewController {
     }
     */
 
-    /*
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let selectedRow = indexPath.row
+//        let selectedItem = markedItemsArray[selectedRow]
+//        let latitude = selectedItem.valueForKey("latitude") as! CLLocationDegrees
+//        let longitude = selectedItem.valueForKey("longitude") as! CLLocationDegrees
+//        
+//        targetLocation = CLLocation(latitude: latitude, longitude: longitude)
+//    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "TargetLocation" {
+            let findView = segue.destinationViewController as! FindViewController
+            let targetIndex = self.findTableView.indexPathForSelectedRow!.row
+            let targetItem = markedItemsArray[targetIndex]
+            let targetLatitude = targetItem.valueForKey("latitude") as! Double
+            let targetLongitude = targetItem.valueForKey("longitude") as! Double
+            findView.targetLocation = CLLocation(latitude: targetLatitude, longitude: targetLongitude)
+        }
     }
-    */
+    
 
     @IBAction func addCoordinate(sender: AnyObject) {
         let alert = UIAlertController(title: "New name",

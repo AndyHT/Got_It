@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF0496ED1B29B15300F15ED4 /* FindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0496EC1B29B15300F15ED4 /* FindModel.swift */; };
 		EF065C061B2927830042A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C051B2927830042A613 /* AppDelegate.swift */; };
 		EF065C081B2927830042A613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C071B2927830042A613 /* ViewController.swift */; };
 		EF065C0B1B2927830042A613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF065C091B2927830042A613 /* Main.storyboard */; };
@@ -17,6 +16,8 @@
 		EF065C261B2927830042A613 /* GotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C251B2927830042A613 /* GotUITests.swift */; };
 		EF06600A1B2CE857000D55AF /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0660091B2CE857000D55AF /* Coordinates.m */; };
 		EF28EAEC1B2E611C00359DDC /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28EAEB1B2E611C00359DDC /* FindViewController.swift */; };
+		EFB6BF9E1B2EFA9100FF9421 /* DeviceVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6BF9D1B2EFA9100FF9421 /* DeviceVersion.swift */; };
+		EFB6BFA61B2F1F2700FF9421 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6BFA51B2F1F2700FF9421 /* Calculator.swift */; };
 		EFDB48EF1B2C6B3F00CE4740 /* Got.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */; };
 		EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */; };
 		EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */; };
@@ -41,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF0496EC1B29B15300F15ED4 /* FindModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindModel.swift; sourceTree = "<group>"; };
 		EF065C021B2927830042A613 /* Got.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Got.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF065C051B2927830042A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF065C071B2927830042A613 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		EF0660081B2CE857000D55AF /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
 		EF0660091B2CE857000D55AF /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
 		EF28EAEB1B2E611C00359DDC /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		EFB6BF9D1B2EFA9100FF9421 /* DeviceVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceVersion.swift; sourceTree = "<group>"; };
+		EFB6BFA51B2F1F2700FF9421 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		EFDB48EE1B2C6B3F00CE4740 /* Got.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Got.xcdatamodel; sourceTree = "<group>"; };
 		EFDB48F01B2C6BC900CE4740 /* Got-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Got-Bridging-Header.h"; sourceTree = "<group>"; };
 		EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
@@ -119,12 +121,13 @@
 				EFF5ADEB1B2AE80400D49822 /* MarkViewController.swift */,
 				EF28EAEB1B2E611C00359DDC /* FindViewController.swift */,
 				EFF9BED31B2ACCCB0019D8C7 /* FindTableViewController.swift */,
+				EFB6BF9D1B2EFA9100FF9421 /* DeviceVersion.swift */,
+				EFB6BFA51B2F1F2700FF9421 /* Calculator.swift */,
+				EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */,
 				EF065C091B2927830042A613 /* Main.storyboard */,
 				EF065C0C1B2927830042A613 /* Assets.xcassets */,
 				EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */,
 				EF065C111B2927830042A613 /* Info.plist */,
-				EF0496EC1B29B15300F15ED4 /* FindModel.swift */,
-				EFF5ADED1B2AEA7100D49822 /* DetailViewController.swift */,
 				EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */,
 				EFDB48F01B2C6BC900CE4740 /* Got-Bridging-Header.h */,
 				EF0660071B2CE857000D55AF /* Coordinates+CoreDataProperties.h */,
@@ -285,8 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFF9BED41B2ACCCB0019D8C7 /* FindTableViewController.swift in Sources */,
-				EF0496ED1B29B15300F15ED4 /* FindModel.swift in Sources */,
+				EFB6BF9E1B2EFA9100FF9421 /* DeviceVersion.swift in Sources */,
 				EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */,
+				EFB6BFA61B2F1F2700FF9421 /* Calculator.swift in Sources */,
 				EF06600A1B2CE857000D55AF /* Coordinates.m in Sources */,
 				EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */,
 				EF28EAEC1B2E611C00359DDC /* FindViewController.swift in Sources */,
