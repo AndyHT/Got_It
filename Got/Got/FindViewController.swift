@@ -17,26 +17,25 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     var currentLocation:CLLocation? = nil
     var targetLocation:CLLocation? = nil
     
+    @IBOutlet weak var currentDistanceLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locationManager.delegate = self
         // Do any additional setup after loading the view.
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        let diviceVersion = DeviceVersion()
-        if diviceVersion.version >= 8 {
+        if DeviceVersion().version >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
-        
         locationManager.startUpdatingLocation()
+        print("location start update")
         
-        locationManager.distanceFilter = 100
+        locationManager.distanceFilter = kCLDistanceFilterNone
         
-        //得到targetLocation，计算角度和距离，用动画改变View
-        if let location = targetLocation {
-            print(location)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,10 +44,20 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
+        print("get location")
         let location: CLLocation = locations[locations.count - 1] as! CLLocation
         
         if location.horizontalAccuracy > 0 {
             currentLocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        }
+        
+        //得到targetLocation，计算角度和距离，用动画改变View
+        if let tarLocation = targetLocation, let curLocation = currentLocation {
+            let currentDistance = Calculator().calculateDistance(tarLocation, currentLocation: curLocation)
+            print("current latitude: \(curLocation.coordinate.latitude), current longitude: \(curLocation.coordinate.longitude)")
+            print("target latitude: \(tarLocation.coordinate.latitude), target longitude: \(tarLocation.coordinate.longitude)")
+            print("current distance \(currentDistance)")
+            currentDistanceLabel.text = "\(currentDistance)"
         }
     }
     

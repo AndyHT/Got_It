@@ -21,8 +21,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager:CLLocationManager = CLLocationManager()
     
-    var currentLocations:[CLLocation] = []
-    var isFirstGetCoordinate = true
+    var currentLocations: CLLocation? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +31,11 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        let deviceVersion = DeviceVersion()
-        
-        if deviceVersion.version >= 8 {
+        if DeviceVersion().version >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
         locationManager.startUpdatingLocation()
+        print("lcoation start update")
         
         //设置Filter每秒钟获取一次位置
         locationManager.distanceFilter = kCLDistanceFilterNone
@@ -48,29 +46,14 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func ios8() -> Bool {
-        let version = UIDevice.currentDevice().systemVersion
-        let ver = NSNumberFormatter().numberFromString(version)!.floatValue
-        return ver >= 8.0
-    }
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
         let location:CLLocation = locations[locations.count - 1] as! CLLocation
-        
+        print("get current location")
         //if location changed, update currentLocations
         if (location.horizontalAccuracy > 0) {
             
-            //可以考虑将currentLocation设置为optional
-            
-            //如果是第一次得到Coordinate, 此时currentLocations还是空数组
-            if isFirstGetCoordinate {
-                setViewAfterGetLocationSuccess()
-                isFirstGetCoordinate = false
-                currentLocations.append(CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
-
-            }
-            //为了优化数据结构大小
-            currentLocations[0] = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            currentLocations = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            setViewAfterGetLocationSuccess()
 
         }
     }
@@ -110,10 +93,9 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
     
     //拍照并记录coordinate,将coordinate传给DetailViewController
     @IBAction func markIt(sender: AnyObject) {
-        let location = currentLocations[0]
-        print("latitude:\(location.coordinate.latitude),longitude:\(location.coordinate.longitude)")
-        locationManager.stopUpdatingLocation()
+        if let location = currentLocations {
+            print("latitude:\(location.coordinate.latitude),longitude:\(location.coordinate.longitude)")
+            locationManager.stopUpdatingLocation()
+        }
     }
-    
-
 }

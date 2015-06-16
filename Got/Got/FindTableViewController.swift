@@ -144,14 +144,6 @@ class FindTableViewController: UITableViewController {
     }
     */
 
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let selectedRow = indexPath.row
-//        let selectedItem = markedItemsArray[selectedRow]
-//        let latitude = selectedItem.valueForKey("latitude") as! CLLocationDegrees
-//        let longitude = selectedItem.valueForKey("longitude") as! CLLocationDegrees
-//        
-//        targetLocation = CLLocation(latitude: latitude, longitude: longitude)
-//    }
     
     // MARK: - Navigation
 
@@ -213,8 +205,8 @@ class FindTableViewController: UITableViewController {
 
             //3
             let tempDate = dateFromString("2015-06-10")
-            let tempLatitude = 30.0
-            let tempLongitude = 110.0
+            let tempLatitude = 31.0
+            let tempLongitude = 121.0
             markedItem.setValue(id, forKey: "id")
             markedItem.setValue(tempDate, forKey: "time")
             markedItem.setValue(tempLatitude, forKey: "latitude")
