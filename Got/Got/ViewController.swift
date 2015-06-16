@@ -19,6 +19,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough") as Bool
+        
+        if hasViewedWalkthrough == false {
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("GuidePageViewController") as? GuidePageViewController {
+                self.presentViewController(pageViewController, animated: true, completion: nil)
+            }
+        }
+    }
 
 
 }

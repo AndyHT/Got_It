@@ -40,6 +40,57 @@
             </objects>
             <point key="canvasLocation" x="298" y="1254"/>
         </scene>
+        <!--Guide Page View Controller-->
+        <scene sceneID="ete-cd-2Y4">
+            <objects>
+                <pageViewController storyboardIdentifier="GuidePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9j2-Yj-mXA" customClass="GuidePageViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQf-tH-tmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-753" y="2309"/>
+        </scene>
+        <!--Guide Content View Controller-->
+        <scene sceneID="Sgg-3v-90k">
+            <objects>
+                <viewController storyboardIdentifier="GuideContentViewController" id="iG2-U0-mSf" customClass="GuideContentViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sg2-dI-jw3"/>
+                        <viewControllerLayoutGuide type="bottom" id="VVt-cr-oXM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K2n-kw-g8y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlm-iT-pqT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlN-ZE-cHW">
+                                <rect key="frame" x="123" y="112" width="75" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeGuideView:" destination="iG2-U0-mSf" eventType="touchUpInside" id="iVf-hN-Zjm"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Alo-kE-BBy">
+                                <rect key="frame" x="141" y="523" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backImage" destination="mlm-iT-pqT" id="6b3-lE-EEA"/>
+                        <outlet property="getStartButton" destination="SlN-ZE-cHW" id="rTl-jG-yXt"/>
+                        <outlet property="pageControl" destination="Alo-kE-BBy" id="QO2-ot-LBh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZyX-Yo-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-324" y="2316"/>
+        </scene>
         <!--Find IT-->
         <scene sceneID="DFl-md-j5k">
             <objects>
