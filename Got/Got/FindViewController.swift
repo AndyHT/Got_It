@@ -32,10 +32,19 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
         }
         locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
         print("location start update")
         
         locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.headingFilter = kCLHeadingFilterNone
         
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingHeading()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,15 +63,23 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         //得到targetLocation，计算角度和距离，用动画改变View
         if let tarLocation = targetLocation, let curLocation = currentLocation {
             let currentDistance = Calculator().calculateDistance(tarLocation, currentLocation: curLocation)
+            let currentAngle = Calculator().calculateAngle(tarLocation, currentLocation: curLocation)
             print("current latitude: \(curLocation.coordinate.latitude), current longitude: \(curLocation.coordinate.longitude)")
             print("target latitude: \(tarLocation.coordinate.latitude), target longitude: \(tarLocation.coordinate.longitude)")
             print("current distance \(currentDistance)")
+            print("current angle \(currentAngle)")
             currentDistanceLabel.text = "\(currentDistance)"
         }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        //获得手机方向角
+        
+//        print(newHeading.trueHeading)
     }
     
 

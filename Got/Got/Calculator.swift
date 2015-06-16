@@ -40,7 +40,24 @@ class Calculator {
     }
     
     //计算角度
-    func calculateAngle(targetLocation: CLLocation, currentLocation: CLLocation) {
+    func calculateAngle(targetLocation: CLLocation, currentLocation: CLLocation) -> Double{
+        let latA = targetLocation.coordinate.latitude
+        let lonA = targetLocation.coordinate.longitude
         
+        let latB = currentLocation.coordinate.latitude
+        let lonB = currentLocation.coordinate.longitude
+        
+        let radLatA = rad(latA)
+        let radLatB = rad(latB)
+        let radLonA = rad(lonA)
+        let radLonB = rad(lonB)
+        
+        var temp = sin(radLatA) * sin(radLatB) + cos(radLatA) * cos(radLatB) * cos(radLonB - radLonA)
+        temp = sqrt(1 - temp * temp)
+        temp = cos(radLatB) * sin(radLonB - radLonA) / temp
+        temp = rad(asin(temp))
+        let angle = round(temp * 10000)
+        
+        return angle
     }
 }
