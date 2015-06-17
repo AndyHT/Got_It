@@ -19,6 +19,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var currentDistanceLabel: UILabel!
     
+    @IBOutlet weak var compass: UIImageView!
     
     
     override func viewDidLoad() {
@@ -77,9 +78,14 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        //获得手机方向角
+        //newHeading.trueHeading获得手机方向角,更改compass方向
         
-//        print(newHeading.trueHeading)
+        let direction = newHeading.trueHeading
+        
+        print("\(direction)")
+        
+//        self.compass.transform = CGAffineTransformRotate(self.compass.transform, direction.)
+        
     }
     
 

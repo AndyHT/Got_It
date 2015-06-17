@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-tM-1g4">
-                                <rect key="frame" x="20" y="348" width="200" height="200"/>
-                                <state key="normal" title="Find It" backgroundImage="bubble_blue"/>
+                                <rect key="frame" x="20" y="368" width="160" height="160"/>
+                                <state key="normal" title="Find It" backgroundImage="bubble-green"/>
                                 <connections>
                                     <segue destination="N7e-P2-n97" kind="push" id="IOb-0w-RQI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRN-7p-teu">
-                                <rect key="frame" x="60" y="100" width="240" height="240"/>
-                                <state key="normal" title="Mark It" backgroundImage="bubble_red"/>
+                                <rect key="frame" x="80" y="119" width="220" height="220"/>
+                                <state key="normal" title="Mark It" backgroundImage="bubble-blue"/>
                                 <connections>
                                     <segue destination="ZQ6-BI-8qi" kind="push" id="S0s-6s-mmY"/>
                                 </connections>
@@ -160,26 +160,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="指示方向" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-yk-krK">
-                                <rect key="frame" x="112" y="273" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="指南针" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq7-Sd-Eic">
-                                <rect key="frame" x="20" y="97" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标记点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Gr-jaR">
-                                <rect key="frame" x="92" y="170" width="51" height="21"/>
+                                <rect key="frame" x="210" y="178" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="显示距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-YA-wvZ">
-                                <rect key="frame" x="112" y="480" width="138" height="50"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="san-bq-XcI">
+                                <rect key="frame" x="140" y="262" width="40" height="43"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="campass" translatesAutoresizingMaskIntoConstraints="NO" id="nlS-WH-Pew">
+                                <rect key="frame" x="20" y="80" width="80" height="80"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="显示距离" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-YA-wvZ">
+                                <rect key="frame" x="20" y="498" width="280" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -189,6 +183,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l5V-LT-UTY"/>
                     <connections>
+                        <outlet property="compass" destination="nlS-WH-Pew" id="ygv-Fe-9ng"/>
                         <outlet property="currentDistanceLabel" destination="YcZ-YA-wvZ" id="zv5-eh-tsF"/>
                     </connections>
                 </viewController>
@@ -290,7 +285,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bubble_blue" width="640" height="640"/>
-        <image name="bubble_red" width="640" height="640"/>
+        <image name="arrow" width="40" height="43"/>
+        <image name="bubble-blue" width="200" height="198"/>
+        <image name="bubble-green" width="200" height="200"/>
+        <image name="campass" width="80" height="80"/>
     </resources>
 </document>
