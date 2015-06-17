@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class MarkViewController: UIViewController, CLLocationManagerDelegate {
+class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
@@ -20,6 +20,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cameraView: UIImageView!
     
     let locationManager:CLLocationManager = CLLocationManager()
+    let picker = UIImagePickerController()
     
     var currentLocations: CLLocation? = nil
 
@@ -28,6 +29,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
         markBtn.hidden = true
         loadingIndicator.startAnimating()
         locationManager.delegate = self
+        picker.delegate = self
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -96,6 +98,40 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate {
         if let location = currentLocations {
             print("latitude:\(location.coordinate.latitude),longitude:\(location.coordinate.longitude)")
             locationManager.stopUpdatingLocation()
+            
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                picker.allowsEditing = false
+                picker.sourceType = UIImagePickerControllerSourceType.Camera
+                picker.cameraCaptureMode = .Photo
+                presentViewController(picker, animated: true, completion: nil)
+            } else {
+                noCamera()
+            }
         }
+    }
+    
+    func noCamera() {
+        let alertVC = UIAlertController(title: "No Camera", message: "Sorry, this device has no camera", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+        alertVC.addAction(okAction)
+        presentViewController(alertVC, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        dismissViewControllerAnimated(true, completion: nil)
+        var chosenImage: UIImage
+        
+        if picker.allowsEditing {
+            chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        } else {
+            chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        }
+//        self.saveImage(chosenImage, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName: "currentImage.png")
+        cameraView.contentMode = .ScaleAspectFit
+        cameraView.image = chosenImage
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

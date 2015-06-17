@@ -19,7 +19,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var currentDistanceLabel: UILabel!
     
-    @IBOutlet weak var compass: UIImageView!
+    @IBOutlet weak var myAngle: UIImageView!
     
     
     override func viewDidLoad() {
@@ -69,7 +69,11 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             print("target latitude: \(tarLocation.coordinate.latitude), target longitude: \(tarLocation.coordinate.longitude)")
             print("current distance \(currentDistance)")
             print("current angle \(currentAngle)")
+            
+            //显示当前距离
             currentDistanceLabel.text = "\(currentDistance)"
+            
+//            let radCurrentAngle = Calculator().rad(currentAngle)
         }
     }
     
@@ -81,10 +85,13 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         //newHeading.trueHeading获得手机方向角,更改compass方向
         
         let direction = newHeading.trueHeading
+        let angle = (direction.description as NSString).doubleValue
+        print("direction: \(direction), angle: \(angle)")
         
-        print("\(direction)")
+        let radAngle = Calculator().rad(angle);
         
-//        self.compass.transform = CGAffineTransformRotate(self.compass.transform, direction.)
+        //指示我自己现在的方向
+        self.myAngle.transform = CGAffineTransformMakeRotation(CGFloat(-radAngle))
         
     }
     

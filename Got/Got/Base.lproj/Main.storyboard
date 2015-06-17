@@ -148,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="298" y="2020"/>
         </scene>
-        <!--Find View Controller-->
+        <!--Find IT-->
         <scene sceneID="jkh-rz-tQw">
             <objects>
                 <viewController id="jlh-8J-8Za" customClass="FindViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,17 +160,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标记点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Gr-jaR">
-                                <rect key="frame" x="210" y="178" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="san-bq-XcI">
                                 <rect key="frame" x="140" y="262" width="40" height="43"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="campass" translatesAutoresizingMaskIntoConstraints="NO" id="nlS-WH-Pew">
-                                <rect key="frame" x="20" y="80" width="80" height="80"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="显示距离" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-YA-wvZ">
                                 <rect key="frame" x="20" y="498" width="280" height="50"/>
@@ -178,13 +169,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标记点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Gr-jaR">
+                                <rect key="frame" x="196" y="142" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="l5V-LT-UTY"/>
+                    <navigationItem key="navigationItem" title="Find IT" id="l5V-LT-UTY"/>
                     <connections>
-                        <outlet property="compass" destination="nlS-WH-Pew" id="ygv-Fe-9ng"/>
                         <outlet property="currentDistanceLabel" destination="YcZ-YA-wvZ" id="zv5-eh-tsF"/>
+                        <outlet property="myAngle" destination="san-bq-XcI" id="k0f-q6-5L1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRp-Ad-xyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,6 +285,5 @@
         <image name="arrow" width="40" height="43"/>
         <image name="bubble-blue" width="200" height="198"/>
         <image name="bubble-green" width="200" height="200"/>
-        <image name="campass" width="80" height="80"/>
     </resources>
 </document>

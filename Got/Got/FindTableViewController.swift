@@ -92,7 +92,7 @@ class FindTableViewController: UITableViewController {
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = dateFormat
-        let markDate = markItem.valueForKey("time") as! NSDate//添加viewWillAppear就会导致crash
+        let markDate = markItem.valueForKey("time") as! NSDate
         
         date.text = dateFormatter.stringFromDate(markDate)
 
