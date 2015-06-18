@@ -63,21 +63,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlm-iT-pqT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlN-ZE-cHW">
-                                <rect key="frame" x="123" y="112" width="75" height="23"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Alo-kE-BBy">
+                                <rect key="frame" x="141" y="523" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlN-ZE-cHW">
+                                <rect key="frame" x="75" y="450" width="171" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" backgroundImage="tap-start">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="closeGuideView:" destination="iG2-U0-mSf" eventType="touchUpInside" id="iVf-hN-Zjm"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Alo-kE-BBy">
-                                <rect key="frame" x="141" y="523" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -101,7 +101,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="findCell" textLabel="Rqu-mp-TRv" detailTextLabel="ig3-al-6aL" style="IBUITableViewCellStyleSubtitle" id="isK-8E-jZh">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isK-8E-jZh" id="Q5g-n1-4z0">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -146,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hi-Dv-aO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="2020"/>
+            <point key="canvasLocation" x="298" y="2020"/>
         </scene>
         <!--Find IT-->
         <scene sceneID="jkh-rz-tQw">
@@ -199,7 +199,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-4V-jqn">
-                                <rect key="frame" x="20" y="72" width="280" height="476"/>
+                                <rect key="frame" x="20" y="85" width="280" height="463"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-zp-u4o">
                                 <rect key="frame" x="150" y="214" width="20" height="20"/>
@@ -209,28 +209,30 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-fw-dMI">
-                                <rect key="frame" x="114" y="496" width="92" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-fw-dMI">
+                                <rect key="frame" x="115" y="214" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Mark">
+                                <state key="normal" backgroundImage="take-photo">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="markIt:" destination="ZQ6-BI-8qi" eventType="touchUpInside" id="oZ9-4Y-beE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h30-G4-5v7">
+                                <rect key="frame" x="115" y="391" width="90" height="90"/>
+                                <state key="normal" backgroundImage="done"/>
+                                <connections>
+                                    <segue destination="5x3-ws-9cn" kind="push" identifier="markedItem" id="bQ7-6N-cGt"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.24313725490196078" green="0.49411764705882355" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mark IT" id="Zvi-Qt-GXr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="p3R-AW-lFa">
-                            <connections>
-                                <segue destination="5x3-ws-9cn" kind="push" identifier="markedItem" id="kL1-Py-mwP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Mark IT" id="Zvi-Qt-GXr"/>
                     <connections>
                         <outlet property="cameraView" destination="9gD-4V-jqn" id="U8D-ds-DZm"/>
+                        <outlet property="confirmPhoto" destination="h30-G4-5v7" id="gw8-AW-2wR"/>
                         <outlet property="loading" destination="eni-If-62X" id="EHZ-Gn-aMT"/>
                         <outlet property="loadingIndicator" destination="VxH-zp-u4o" id="N4M-8Q-LGn"/>
                         <outlet property="markBtn" destination="bCF-fw-dMI" id="spR-Uw-YJc"/>
@@ -252,33 +254,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-M4-5bA">
-                                <rect key="frame" x="20" y="95" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-N8-dSM">
-                                <rect key="frame" x="20" y="141" width="280" height="407"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-dr-rlA">
-                                <rect key="frame" x="66" y="91" width="234" height="30"/>
+                                <rect key="frame" x="20" y="72" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9b-r5-4Ce">
-                                <rect key="frame" x="116" y="495" width="88" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-N8-dSM">
+                                <rect key="frame" x="20" y="106" width="280" height="356"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9b-r5-4Ce">
+                                <rect key="frame" x="115" y="470" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <state key="normal" title="Save">
+                                <state key="normal" backgroundImage="done">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="saveMarkedItem:" destination="5x3-ws-9cn" eventType="touchUpInside" id="B19-Qc-1As"/>
-                                    <segue destination="N7e-P2-n97" kind="push" id="kqL-q4-lkk"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.4941176471" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mark" id="D36-C4-OCh"/>
                     <connections>
@@ -313,10 +308,12 @@
         <image name="arrow" width="40" height="43"/>
         <image name="bubble-blue" width="200" height="198"/>
         <image name="bubble-green" width="200" height="200"/>
+        <image name="done" width="90" height="90"/>
         <image name="point" width="30" height="30"/>
+        <image name="take-photo" width="90" height="90"/>
+        <image name="tap-start" width="171" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kqL-q4-lkk"/>
-        <segue reference="VuK-Ad-wVM"/>
+        <segue reference="S0s-6s-mmY"/>
     </inferredMetricsTieBreakers>
 </document>

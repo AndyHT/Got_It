@@ -23,6 +23,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        markedItemTitle.placeholder = "请输入图片的名字"
+        markedItemTitle.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
 
         markedItemTitle.delegate = self
         // Do any additional setup after loading the view.
@@ -50,6 +52,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         if let needSaveTitle = markedItemTitle.text, let needSaveLocation = markedItemLocation, let needSaveImage = markedImageInView.image {
             //保存markedItem
             self.saveMarkedItemInCoreData(needSaveTitle, location: needSaveLocation, image: needSaveImage)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+
         } else {
             //提示用户需要拍照和输入title
             let alert = UIAlertController(title: "没有照片或者title", message: "请拍摄照片或输入title", preferredStyle: .Alert)
@@ -61,6 +65,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             presentViewController(alert, animated: true, completion: nil)
             
         }
+        
     }
 
     func saveMarkedItemInCoreData(markedTitle: String, location: CLLocation, image: UIImage) {
@@ -91,7 +96,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         }
         
         //保存图片到沙盒
+        
     }
+    
+    
     
 
 }

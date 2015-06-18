@@ -19,6 +19,8 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
     
     @IBOutlet weak var cameraView: UIImageView!
     
+    @IBOutlet weak var confirmPhoto: UIButton!
+    
     let locationManager:CLLocationManager = CLLocationManager()
     let picker = UIImagePickerController()
     
@@ -28,9 +30,12 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         markBtn.hidden = true
+        confirmPhoto.hidden = true
         loadingIndicator.startAnimating()
         locationManager.delegate = self
         picker.delegate = self
+        
+//        self.view.backgroundColor = UIColor(red: 199, green: 227, blue: 250, alpha: CGFloat(0.5))
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -95,6 +100,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
             
             if let location = currentLocations, let image = pickedImage {
                 detailView.markedItemImage = image
+                print(image.description)
                 detailView.markedItemLocation = location
             }
         }
@@ -139,6 +145,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         cameraView.contentMode = .ScaleAspectFit
         cameraView.image = chosenImage
         pickedImage = chosenImage
+        confirmPhoto.hidden = false
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

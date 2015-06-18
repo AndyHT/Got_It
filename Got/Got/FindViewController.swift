@@ -92,7 +92,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         let radAngle = Calculator().rad(angle);
         
         //指示我自己现在的方向
-        self.myAngle.transform = CGAffineTransformMakeRotation(CGFloat(-radAngle))
+        self.myAngle.transform = CGAffineTransformMakeRotation(CGFloat(radAngle))
         
     }
     
