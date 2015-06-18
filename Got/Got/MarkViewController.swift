@@ -23,6 +23,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
     let picker = UIImagePickerController()
     
     var currentLocations: CLLocation? = nil
+    var pickedImage: UIImage? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,21 +78,29 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         
         markBtn.hidden = false
         
-        //temp for test
-        let image = UIImage(named: "test_image")
-        self.cameraView.image = image
-    }
+        }
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        //将照片和位置信息传给DetailView
+        if segue.identifier == "markedItem" {
+            let detailView = segue.destinationViewController as! DetailViewController
+            
+            if let location = currentLocations, let image = pickedImage {
+                detailView.markedItemImage = image
+                detailView.markedItemLocation = location
+            }
+        }
+        
     }
-    */
+    
     
     //拍照并记录coordinate,将coordinate传给DetailViewController
     @IBAction func markIt(sender: AnyObject) {
@@ -129,6 +138,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
 //        self.saveImage(chosenImage, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName: "currentImage.png")
         cameraView.contentMode = .ScaleAspectFit
         cameraView.image = chosenImage
+        pickedImage = chosenImage
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

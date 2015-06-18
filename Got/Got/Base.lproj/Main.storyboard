@@ -200,15 +200,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-fw-dMI">
-                                <rect key="frame" x="114" y="466" width="92" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Mark"/>
-                                <connections>
-                                    <action selector="markIt:" destination="ZQ6-BI-8qi" eventType="touchUpInside" id="oZ9-4Y-beE"/>
-                                    <segue destination="5x3-ws-9cn" kind="push" id="csq-QC-zrp"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-4V-jqn">
                                 <rect key="frame" x="40" y="136" width="240" height="240"/>
                             </imageView>
@@ -220,10 +211,24 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-fw-dMI">
+                                <rect key="frame" x="114" y="480" width="92" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Mark"/>
+                                <connections>
+                                    <action selector="markIt:" destination="ZQ6-BI-8qi" eventType="touchUpInside" id="oZ9-4Y-beE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mark IT" id="Zvi-Qt-GXr"/>
+                    <navigationItem key="navigationItem" title="Mark IT" id="Zvi-Qt-GXr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="p3R-AW-lFa">
+                            <connections>
+                                <segue destination="5x3-ws-9cn" kind="push" identifier="markedItem" id="kL1-Py-mwP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraView" destination="9gD-4V-jqn" id="U8D-ds-DZm"/>
                         <outlet property="loading" destination="eni-If-62X" id="EHZ-Gn-aMT"/>
@@ -247,16 +252,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="详情页，展示Marked Item详情" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-M4-5bA">
-                                <rect key="frame" x="44" y="226" width="232" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-M4-5bA">
+                                <rect key="frame" x="40" y="160" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-N8-dSM">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-dr-rlA">
+                                <rect key="frame" x="140" y="156" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9b-r5-4Ce">
+                                <rect key="frame" x="137" y="461" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveMarkedItem:" destination="5x3-ws-9cn" eventType="touchUpInside" id="B19-Qc-1As"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="D36-C4-OCh"/>
+                    <connections>
+                        <outlet property="markedImageInView" destination="eg6-N8-dSM" id="i4X-KU-Ve9"/>
+                        <outlet property="markedItemTitle" destination="fd5-dr-rlA" id="Vml-fg-WCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Up3-Fh-xt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

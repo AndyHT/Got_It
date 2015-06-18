@@ -15,7 +15,7 @@ class FindTableViewController: UITableViewController {
     @IBOutlet var findTableView: UITableView!
     var markedItemsArray = [NSManagedObject]()
     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//    var targetLocation: CLLocation? = nil
+    var targetLocation: CLLocation? = nil
     
     func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()

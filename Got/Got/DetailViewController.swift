@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
 
 class DetailViewController: UIViewController {
+    
+    var markedItemImage: UIImage? = nil
+    var markedItemLocation: CLLocation? = nil
 
+    @IBOutlet weak var markedItemTitle: UITextField!
+    @IBOutlet weak var markedImageInView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let image = markedItemImage {
+            markedImageInView.image = image
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +31,12 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveMarkedItem(sender: AnyObject) {
+        //保存markedItem
+        
     }
-    */
+
+    
+    
 
 }
