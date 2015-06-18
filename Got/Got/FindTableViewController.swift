@@ -162,64 +162,34 @@ class FindTableViewController: UITableViewController {
         }
     }
     
-
-    @IBAction func addCoordinate(sender: AnyObject) {
-        let alert = UIAlertController(title: "New name",
-            message: "Add a new name",
-            preferredStyle: .Alert)
-        
-        let saveAction = UIAlertAction(title: "Save",
-            style: .Default) { (action: UIAlertAction!) -> Void in
-                
-                let textField = alert.textFields![0] as UITextField
-                self.saveMarkedItemInCoreData(textField.text!)
-                self.tableView.reloadData()
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-            style: .Default) { (action: UIAlertAction!) -> Void in
-        }
-        
-        alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField!) -> Void in
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        presentViewController(alert,
-            animated: true,
-            completion: nil)
-    }
-    
-    func saveMarkedItemInCoreData(id: String) {
-        //1
-        let managedContext = self.appDelegate.managedObjectContext
-        
-        //2
-        let entity =  NSEntityDescription.entityForName("Coordinates",
-            inManagedObjectContext: managedContext)
-        
-        if let entityGot = entity {
-            let markedItem = NSManagedObject(entity: entityGot, insertIntoManagedObjectContext:managedContext)
-
-            //3
-            let tempDate = dateFromString("2015-06-10")
-            let tempLatitude = 31.0
-            let tempLongitude = 121.0
-            markedItem.setValue(id, forKey: "id")
-            markedItem.setValue(tempDate, forKey: "time")
-            markedItem.setValue(tempLatitude, forKey: "latitude")
-            markedItem.setValue(tempLongitude, forKey: "longitude")
-            
-            //4
-            do {
-                try managedContext.save()
-            } catch {
-                print("Could not save with error")
-            }
-            //5
-            markedItemsArray.append(markedItem)
-        }
-    }
+//    func saveMarkedItemInCoreData(id: String) {
+//        //1
+//        let managedContext = self.appDelegate.managedObjectContext
+//        
+//        //2
+//        let entity =  NSEntityDescription.entityForName("Coordinates",
+//            inManagedObjectContext: managedContext)
+//        
+//        if let entityGot = entity {
+//            let markedItem = NSManagedObject(entity: entityGot, insertIntoManagedObjectContext:managedContext)
+//
+//            //3
+//            let tempDate = dateFromString("2015-06-10")
+//            let tempLatitude = 31.0
+//            let tempLongitude = 121.0
+//            markedItem.setValue(id, forKey: "id")
+//            markedItem.setValue(tempDate, forKey: "time")
+//            markedItem.setValue(tempLatitude, forKey: "latitude")
+//            markedItem.setValue(tempLongitude, forKey: "longitude")
+//            
+//            //4
+//            do {
+//                try managedContext.save()
+//            } catch {
+//                print("Could not save with error")
+//            }
+//            //5
+//            markedItemsArray.append(markedItem)
+//        }
+//    }
 }

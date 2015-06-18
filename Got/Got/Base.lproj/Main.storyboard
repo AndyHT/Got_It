@@ -101,7 +101,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="findCell" textLabel="Rqu-mp-TRv" detailTextLabel="ig3-al-6aL" style="IBUITableViewCellStyleSubtitle" id="isK-8E-jZh">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isK-8E-jZh" id="Q5g-n1-4z0">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -136,7 +136,7 @@
                     <navigationItem key="navigationItem" title="Find IT" id="8z9-t5-h2n">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mxu-Jy-05b">
                             <connections>
-                                <action selector="addCoordinate:" destination="N7e-P2-n97" id="mbh-oU-9Vk"/>
+                                <segue destination="ZQ6-BI-8qi" kind="push" id="VuK-Ad-wVM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -146,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hi-Dv-aO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="2020"/>
+            <point key="canvasLocation" x="332" y="2020"/>
         </scene>
         <!--Find IT-->
         <scene sceneID="jkh-rz-tQw">
@@ -164,17 +164,14 @@
                                 <rect key="frame" x="140" y="262" width="40" height="43"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="显示距离" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-YA-wvZ">
-                                <rect key="frame" x="20" y="498" width="280" height="50"/>
+                                <rect key="frame" x="20" y="519" width="280" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标记点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Gr-jaR">
-                                <rect key="frame" x="196" y="142" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="point" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-zg-HvD">
+                                <rect key="frame" x="204" y="176" width="30" height="30"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -182,11 +179,12 @@
                     <connections>
                         <outlet property="currentDistanceLabel" destination="YcZ-YA-wvZ" id="zv5-eh-tsF"/>
                         <outlet property="myAngle" destination="san-bq-XcI" id="k0f-q6-5L1"/>
+                        <outlet property="targetPoint" destination="LHn-zg-HvD" id="LQo-hf-0RO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRp-Ad-xyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="2020"/>
+            <point key="canvasLocation" x="1259" y="2020"/>
         </scene>
         <!--Mark IT-->
         <scene sceneID="uDJ-b7-Td5">
@@ -201,7 +199,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-4V-jqn">
-                                <rect key="frame" x="40" y="136" width="240" height="240"/>
+                                <rect key="frame" x="20" y="72" width="280" height="476"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-zp-u4o">
                                 <rect key="frame" x="150" y="214" width="20" height="20"/>
@@ -212,9 +210,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-fw-dMI">
-                                <rect key="frame" x="114" y="480" width="92" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Mark"/>
+                                <rect key="frame" x="114" y="496" width="92" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Mark">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="markIt:" destination="ZQ6-BI-8qi" eventType="touchUpInside" id="oZ9-4Y-beE"/>
                                 </connections>
@@ -240,7 +240,7 @@
             </objects>
             <point key="canvasLocation" x="760" y="1254"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Mark-->
         <scene sceneID="SqC-FF-I8p">
             <objects>
                 <viewController id="5x3-ws-9cn" customClass="DetailViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController">
@@ -253,30 +253,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-M4-5bA">
-                                <rect key="frame" x="40" y="160" width="38" height="21"/>
+                                <rect key="frame" x="20" y="95" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-N8-dSM">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <rect key="frame" x="20" y="141" width="280" height="407"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-dr-rlA">
-                                <rect key="frame" x="140" y="156" width="97" height="30"/>
+                                <rect key="frame" x="66" y="91" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9b-r5-4Ce">
-                                <rect key="frame" x="137" y="461" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="116" y="495" width="88" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="saveMarkedItem:" destination="5x3-ws-9cn" eventType="touchUpInside" id="B19-Qc-1As"/>
+                                    <segue destination="N7e-P2-n97" kind="push" id="kqL-q4-lkk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="D36-C4-OCh"/>
+                    <navigationItem key="navigationItem" title="Mark" id="D36-C4-OCh"/>
                     <connections>
                         <outlet property="markedImageInView" destination="eg6-N8-dSM" id="i4X-KU-Ve9"/>
                         <outlet property="markedItemTitle" destination="fd5-dr-rlA" id="Vml-fg-WCH"/>
@@ -309,5 +313,10 @@
         <image name="arrow" width="40" height="43"/>
         <image name="bubble-blue" width="200" height="198"/>
         <image name="bubble-green" width="200" height="200"/>
+        <image name="point" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kqL-q4-lkk"/>
+        <segue reference="VuK-Ad-wVM"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -21,6 +21,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var myAngle: UIImageView!
     
+    @IBOutlet weak var targetPoint: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             print("current angle \(currentAngle)")
             
             //显示当前距离
-            currentDistanceLabel.text = "\(currentDistance)"
+            currentDistanceLabel.text = "距离目标还有\(currentDistance)米"
             
 //            let radCurrentAngle = Calculator().rad(currentAngle)
         }
