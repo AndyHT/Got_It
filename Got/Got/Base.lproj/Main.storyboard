@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-tM-1g4">
-                                <rect key="frame" x="20" y="368" width="160" height="160"/>
-                                <state key="normal" title="Find It" backgroundImage="bubble-green"/>
-                                <connections>
-                                    <segue destination="N7e-P2-n97" kind="push" id="IOb-0w-RQI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRN-7p-teu">
-                                <rect key="frame" x="80" y="119" width="220" height="220"/>
-                                <state key="normal" title="Mark It" backgroundImage="bubble-blue"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="348"/>
+                                <state key="normal" title="Mark It" backgroundImage="button1"/>
                                 <connections>
                                     <segue destination="ZQ6-BI-8qi" kind="push" id="S0s-6s-mmY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-tM-1g4">
+                                <rect key="frame" x="0.0" y="209" width="320" height="359"/>
+                                <state key="normal" title="Find It" backgroundImage="button2"/>
+                                <connections>
+                                    <segue destination="N7e-P2-n97" kind="push" id="IOb-0w-RQI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,7 +46,7 @@
                 <pageViewController storyboardIdentifier="GuidePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9j2-Yj-mXA" customClass="GuidePageViewController" customModule="Got" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQf-tH-tmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-753" y="2309"/>
+            <point key="canvasLocation" x="-763" y="2025"/>
         </scene>
         <!--Guide Content View Controller-->
         <scene sceneID="Sgg-3v-90k">
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyX-Yo-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="2316"/>
+            <point key="canvasLocation" x="-338" y="2020"/>
         </scene>
         <!--Find IT-->
         <scene sceneID="DFl-md-j5k">
@@ -100,22 +100,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="findCell" textLabel="Rqu-mp-TRv" detailTextLabel="ig3-al-6aL" style="IBUITableViewCellStyleSubtitle" id="isK-8E-jZh">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="findCell" textLabel="Rqu-mp-TRv" detailTextLabel="ig3-al-6aL" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="isK-8E-jZh">
+                                <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isK-8E-jZh" id="Q5g-n1-4z0">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" tag="101" contentMode="left" text="Bicycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rqu-mp-TRv">
-                                            <rect key="frame" x="15" y="6" width="52" height="19.5"/>
+                                            <rect key="frame" x="15" y="14" width="52" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" tag="102" contentMode="left" text="06/10/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ig3-al-6aL">
-                                            <rect key="frame" x="15" y="25.5" width="60" height="13.5"/>
+                                            <rect key="frame" x="15" y="33.5" width="60" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,15 +163,15 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="san-bq-XcI">
                                 <rect key="frame" x="140" y="262" width="40" height="43"/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="point" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-zg-HvD">
+                                <rect key="frame" x="204" y="176" width="30" height="30"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="显示距离" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-YA-wvZ">
-                                <rect key="frame" x="20" y="519" width="280" height="29"/>
+                                <rect key="frame" x="20" y="439" width="280" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="point" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-zg-HvD">
-                                <rect key="frame" x="204" y="176" width="30" height="30"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -306,8 +306,8 @@
     </scenes>
     <resources>
         <image name="arrow" width="40" height="43"/>
-        <image name="bubble-blue" width="200" height="198"/>
-        <image name="bubble-green" width="200" height="200"/>
+        <image name="button1" width="360" height="404"/>
+        <image name="button2" width="360" height="412"/>
         <image name="done" width="90" height="90"/>
         <image name="point" width="30" height="30"/>
         <image name="take-photo" width="90" height="90"/>

@@ -29,14 +29,13 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         markBtn.hidden = true
         confirmPhoto.hidden = true
         loadingIndicator.startAnimating()
         locationManager.delegate = self
         picker.delegate = self
-        
-//        self.view.backgroundColor = UIColor(red: 199, green: 227, blue: 250, alpha: CGFloat(0.5))
-        
+                
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         if DeviceVersion().version >= 8 {
@@ -47,6 +46,12 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         
         //设置Filter每秒钟获取一次位置
         locationManager.distanceFilter = kCLDistanceFilterNone
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.navigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {

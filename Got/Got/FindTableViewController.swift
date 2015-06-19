@@ -38,13 +38,12 @@ class FindTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //1
+        self.navigationController!.navigationBarHidden = false
+        
         let managedContext = self.appDelegate.managedObjectContext
         
-        //2
         let fetchRequest = NSFetchRequest(entityName:"Coordinates")
         
-        //3
         let fetchedResults:[AnyObject]
         
         do {
@@ -128,6 +127,10 @@ class FindTableViewController: UITableViewController {
 
         }
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -163,17 +166,14 @@ class FindTableViewController: UITableViewController {
     }
     
 //    func saveMarkedItemInCoreData(id: String) {
-//        //1
 //        let managedContext = self.appDelegate.managedObjectContext
 //        
-//        //2
 //        let entity =  NSEntityDescription.entityForName("Coordinates",
 //            inManagedObjectContext: managedContext)
 //        
 //        if let entityGot = entity {
 //            let markedItem = NSManagedObject(entity: entityGot, insertIntoManagedObjectContext:managedContext)
 //
-//            //3
 //            let tempDate = dateFromString("2015-06-10")
 //            let tempLatitude = 31.0
 //            let tempLongitude = 121.0
@@ -182,7 +182,6 @@ class FindTableViewController: UITableViewController {
 //            markedItem.setValue(tempLatitude, forKey: "latitude")
 //            markedItem.setValue(tempLongitude, forKey: "longitude")
 //            
-//            //4
 //            do {
 //                try managedContext.save()
 //            } catch {
