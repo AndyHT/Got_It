@@ -24,7 +24,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         markedItemTitle.placeholder = "请输入图片的名字"
-        markedItemTitle.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        markedItemTitle.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: CGFloat(0.5))
 
         markedItemTitle.delegate = self
         // Do any additional setup after loading the view.

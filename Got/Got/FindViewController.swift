@@ -14,6 +14,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager:CLLocationManager = CLLocationManager()
     
+    var targetTitle:String? = nil
     var currentLocation:CLLocation? = nil
     var targetLocation:CLLocation? = nil
     
@@ -23,8 +24,16 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var targetPoint: UIImageView!
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let background = UIImage(named: "find-background")
+//        if let back = background {
+//            self.view.backgroundColor = UIColor(patternImage: back)
+//        }
+        
         locationManager.delegate = self
         // Do any additional setup after loading the view.
         
@@ -65,14 +74,18 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         //得到targetLocation，计算角度和距离，用动画改变View
         if let tarLocation = targetLocation, let curLocation = currentLocation {
             let currentDistance = Calculator().calculateDistance(tarLocation, currentLocation: curLocation)
-            let currentAngle = Calculator().calculateAngle(tarLocation, currentLocation: curLocation)
-            print("current latitude: \(curLocation.coordinate.latitude), current longitude: \(curLocation.coordinate.longitude)")
-            print("target latitude: \(tarLocation.coordinate.latitude), target longitude: \(tarLocation.coordinate.longitude)")
-            print("current distance \(currentDistance)")
-            print("current angle \(currentAngle)")
+//            let currentAngle = Calculator().calculateAngle(tarLocation, currentLocation: curLocation)
+//            print("current latitude: \(curLocation.coordinate.latitude), current longitude: \(curLocation.coordinate.longitude)")
+//            print("target latitude: \(tarLocation.coordinate.latitude), target longitude: \(tarLocation.coordinate.longitude)")
+//            print("current distance \(currentDistance)")
+//            print("current angle \(currentAngle)")
             
             //显示当前距离
-            currentDistanceLabel.text = "距离目标还有\(currentDistance)米"
+            distanceLabel.text = "\(currentDistance) M"
+            if let title = targetTitle {
+                currentDistanceLabel.text = "Distance from \(title):"
+//                print(currentDistance)
+            }
             
 //            let radCurrentAngle = Calculator().rad(currentAngle)
         }
@@ -87,7 +100,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         
         let direction = newHeading.trueHeading
         let angle = (direction.description as NSString).doubleValue
-        print("direction: \(direction), angle: \(angle)")
+//        print("direction: \(direction), angle: \(angle)")
         
         let radAngle = Calculator().rad(angle);
         

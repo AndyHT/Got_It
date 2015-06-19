@@ -162,6 +162,7 @@ class FindTableViewController: UITableViewController {
             let targetLatitude = targetItem.valueForKey("latitude") as! Double
             let targetLongitude = targetItem.valueForKey("longitude") as! Double
             findView.targetLocation = CLLocation(latitude: targetLatitude, longitude: targetLongitude)
+            findView.targetTitle = targetItem.valueForKey("id") as? String
         }
     }
     
