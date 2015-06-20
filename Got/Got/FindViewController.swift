@@ -120,5 +120,8 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     }
     */
     
+    @IBAction func done(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 
 }

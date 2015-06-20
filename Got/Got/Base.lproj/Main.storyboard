@@ -178,13 +178,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf3-iH-OtP">
                                 <rect key="frame" x="39" y="479" width="243" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Find IT" id="l5V-LT-UTY"/>
+                    <navigationItem key="navigationItem" title="Find IT" id="l5V-LT-UTY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3GV-T9-a5e">
+                            <connections>
+                                <action selector="done:" destination="jlh-8J-8Za" id="Tbr-zm-nuB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentDistanceLabel" destination="YcZ-YA-wvZ" id="zv5-eh-tsF"/>
                         <outlet property="distanceLabel" destination="jf3-iH-OtP" id="W5o-vA-QMj"/>
