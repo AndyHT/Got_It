@@ -32,7 +32,12 @@ class FindTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationController!.navigationBar.alpha = 0.5
         
+        let tableViewBackgroundImage = UIImage(named: "background")
+        if let back = tableViewBackgroundImage {
+            self.tableView.backgroundColor = UIColor(patternImage: back)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,8 +87,12 @@ class FindTableViewController: UITableViewController {
         
         let title = cell.viewWithTag(101) as! UILabel
         let date = cell.viewWithTag(102) as! UILabel
+        let imageInCell = cell.viewWithTag(103) as! UIImageView
         
         title.text = markItem.valueForKey("id") as! String?
+        
+        //需要从沙盒中取出图片
+//        imageInCell.image = UIImage(named: "")
         
         //当读到没有date的数据时代码会crash
         let locale = NSLocale.currentLocale()
@@ -166,30 +175,4 @@ class FindTableViewController: UITableViewController {
         }
     }
     
-//    func saveMarkedItemInCoreData(id: String) {
-//        let managedContext = self.appDelegate.managedObjectContext
-//        
-//        let entity =  NSEntityDescription.entityForName("Coordinates",
-//            inManagedObjectContext: managedContext)
-//        
-//        if let entityGot = entity {
-//            let markedItem = NSManagedObject(entity: entityGot, insertIntoManagedObjectContext:managedContext)
-//
-//            let tempDate = dateFromString("2015-06-10")
-//            let tempLatitude = 31.0
-//            let tempLongitude = 121.0
-//            markedItem.setValue(id, forKey: "id")
-//            markedItem.setValue(tempDate, forKey: "time")
-//            markedItem.setValue(tempLatitude, forKey: "latitude")
-//            markedItem.setValue(tempLongitude, forKey: "longitude")
-//            
-//            do {
-//                try managedContext.save()
-//            } catch {
-//                print("Could not save with error")
-//            }
-//            //5
-//            markedItemsArray.append(markedItem)
-//        }
-//    }
 }

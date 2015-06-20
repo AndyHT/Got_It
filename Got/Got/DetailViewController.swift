@@ -88,6 +88,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             markedItem.setValue(tempLatitude, forKey: "latitude")
             markedItem.setValue(tempLongitude, forKey: "longitude")
             
+            //保存图片到沙盒
+            if let image = markedItemImage {
+                self.saveImage(image, newSize: CGSize(width: 40, height: 40), percent: 0.5, imageName: "\(markedTitle)-\(tempDate)")
+            }
+            
             do {
                 try managedContext.save()
             } catch {
@@ -95,11 +100,22 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        //保存图片到沙盒
-        
     }
-    
-    
-    
 
+    
+    //保存图片至沙盒
+    func saveImage(currentImage: UIImage, newSize: CGSize, percent: CGFloat, imageName: String){
+        //压缩图片尺寸
+        UIGraphicsBeginImageContext(newSize)
+        currentImage.drawInRect(CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //高保真压缩图片质量
+        //UIImageJPEGRepresentation此方法可将图片压缩，但是图片质量基本不变，第二个参数即图片质量参数。
+        let imageData: NSData = UIImageJPEGRepresentation(newImage, percent)!
+        // 获取沙盒目录,这里将图片放在沙盒的documents文件夹中
+        let fullPath: String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent(imageName)
+        // 将图片写入文件
+        imageData.writeToFile(fullPath, atomically: false)
+    }
 }

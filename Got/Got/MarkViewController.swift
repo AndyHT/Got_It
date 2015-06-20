@@ -124,8 +124,17 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
                 picker.sourceType = UIImagePickerControllerSourceType.Camera
                 picker.cameraCaptureMode = .Photo
                 presentViewController(picker, animated: true, completion: nil)
+                
+                //添加动画
+                UIView.animateWithDuration(0.5, animations: {
+                    self.markBtn.center.x = CGFloat(20)
+                    self.markBtn.center.y = CGFloat(458)
+                    
+                    self.confirmPhoto.alpha = 0.8
+                })
             } else {
                 noCamera()
+                
             }
         }
     }
@@ -151,9 +160,11 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         cameraView.image = chosenImage
         pickedImage = chosenImage
         confirmPhoto.hidden = false
+        confirmPhoto.alpha = 0
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }

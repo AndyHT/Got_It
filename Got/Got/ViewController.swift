@@ -34,7 +34,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController!.navigationBarHidden = true
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough") as Bool
@@ -44,6 +43,12 @@ class ViewController: UIViewController {
                 self.presentViewController(pageViewController, animated: true, completion: nil)
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.navigationBarHidden = true
     }
 
 
