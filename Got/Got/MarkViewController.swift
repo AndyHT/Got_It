@@ -26,6 +26,8 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
     
     var currentLocations: CLLocation? = nil
     var pickedImage: UIImage? = nil
+    
+    var isTookPhoto = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,20 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         super.viewWillAppear(animated)
         
         self.navigationController!.navigationBarHidden = false
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isTookPhoto {
+            //添加动画
+            UIView.animateWithDuration(0.5, animations: {
+                self.markBtn.center.x = CGFloat(65)
+                self.markBtn.center.y = CGFloat(503)
+                
+                self.confirmPhoto.alpha = 0.8
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,13 +141,7 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
                 picker.cameraCaptureMode = .Photo
                 presentViewController(picker, animated: true, completion: nil)
                 
-                //添加动画
-                UIView.animateWithDuration(0.5, animations: {
-                    self.markBtn.center.x = CGFloat(20)
-                    self.markBtn.center.y = CGFloat(458)
-                    
-                    self.confirmPhoto.alpha = 0.8
-                })
+                
             } else {
                 noCamera()
                 
@@ -157,10 +167,14 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         }
 //        self.saveImage(chosenImage, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName: "currentImage.png")
         cameraView.contentMode = .ScaleAspectFit
+        cameraView.hidden = false
         cameraView.image = chosenImage
         pickedImage = chosenImage
         confirmPhoto.hidden = false
         confirmPhoto.alpha = 0
+        
+        isTookPhoto = true
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

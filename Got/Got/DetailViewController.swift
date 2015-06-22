@@ -89,9 +89,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             markedItem.setValue(tempLongitude, forKey: "longitude")
             
             //保存图片到沙盒
-            if let image = markedItemImage {
-                self.saveImage(image, newSize: CGSize(width: 40, height: 40), percent: 0.5, imageName: "\(markedTitle)-\(tempDate)")
-            }
+//            if let image = markedItemImage {
+//                self.saveImage(image, newSize: CGSize(width: 40, height: 40), percent: 0.5, imageName: "\(markedTitle)-\(tempDate)")
+//            }
             
             do {
                 try managedContext.save()

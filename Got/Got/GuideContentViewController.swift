@@ -51,6 +51,8 @@ class GuideContentViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setBool(true, forKey: "hasViewedWalkthrough")
         
+        defaults.setBool(true, forKey: "isFirstOpen")
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

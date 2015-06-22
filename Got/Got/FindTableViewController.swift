@@ -61,6 +61,23 @@ class FindTableViewController: UITableViewController {
         
         findTableView.reloadData()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //如果tableView第一次打开给用户提示
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isFirstOpen = defaults.boolForKey("isFirstOpen")
+        if isFirstOpen {
+            let alert = UIAlertController(title: "您的Marked List还没有任何东西", message: "点击右上角的＋试试～", preferredStyle: .Alert)
+            let confirmAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            
+            alert.addAction(confirmAction)
+            
+            presentViewController(alert, animated: true, completion: nil)
+            defaults.setBool(false, forKey: "isFirstOpen")
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,7 +104,7 @@ class FindTableViewController: UITableViewController {
         
         let title = cell.viewWithTag(101) as! UILabel
         let date = cell.viewWithTag(102) as! UILabel
-        let imageInCell = cell.viewWithTag(103) as! UIImageView
+//        let imageInCell = cell.viewWithTag(103) as! UIImageView
         
         title.text = markItem.valueForKey("id") as! String?
         
@@ -103,6 +120,8 @@ class FindTableViewController: UITableViewController {
         let markDate = markItem.valueForKey("time") as! NSDate
         
         date.text = dateFormatter.stringFromDate(markDate)
+        
+        cell.backgroundColor = UIColor(white: 1, alpha: CGFloat(0.5))
 
         return cell
     }
