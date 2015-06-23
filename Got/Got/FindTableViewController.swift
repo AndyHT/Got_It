@@ -32,9 +32,8 @@ class FindTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationController!.navigationBar.alpha = 0.5
         
-        let tableViewBackgroundImage = UIImage(named: "background")
+        let tableViewBackgroundImage = UIImage(named: "table-background")
         if let back = tableViewBackgroundImage {
             self.tableView.backgroundColor = UIColor(patternImage: back)
         }
