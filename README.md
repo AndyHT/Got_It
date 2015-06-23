@@ -9,7 +9,4 @@
 * UITableView
 
 #issue:
-1. 如何储存照片并读取
-3. 替换tableView的background
 5. find页面的target动画问题
-6. 改变NavigationBar的颜色和风格
