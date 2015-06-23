@@ -90,7 +90,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             
             //保存图片到CoreData
             if let image = markedItemImage {
-                let tempImageData = UIImagePNGRepresentation(image)
+//                let smallImage = image.scale(CGSize(width: 90, height: 90))
+                let tempImageData = UIImageJPEGRepresentation(image, 0.00001)
                 markedItem.setValue(tempImageData, forKey: "targetImage")
             }
             

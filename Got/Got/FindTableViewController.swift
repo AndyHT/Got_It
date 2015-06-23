@@ -64,10 +64,10 @@ class FindTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        //如果tableView第一次打开给用户提示
+        //如果tableView第一次打开并且为空时给用户提示
         let defaults = NSUserDefaults.standardUserDefaults()
         let isFirstOpen = defaults.boolForKey("isFirstOpen")
-        if isFirstOpen {
+        if isFirstOpen && markedItemsArray.isEmpty {
             let alert = UIAlertController(title: "您的Marked List还没有任何东西", message: "点击右上角的＋试试～", preferredStyle: .Alert)
             let confirmAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             
