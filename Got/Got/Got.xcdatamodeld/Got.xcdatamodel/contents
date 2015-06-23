@@ -4,9 +4,10 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="targetImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Coordinates" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Coordinates" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

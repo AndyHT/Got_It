@@ -2,7 +2,7 @@
 //  Coordinates+CoreDataProperties.h
 //  Got
 //
-//  Created by 一川 on 6/14/15.
+//  Created by 一川 on 6/23/15.
 //  Copyright © 2015 huoteng. All rights reserved.
 //
 //  Delete this file and regenerate it using "Create NSManagedObject Subclass…"
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *latitude;
 @property (nullable, nonatomic, retain) NSNumber *longitude;
 @property (nullable, nonatomic, retain) NSDate *time;
+@property (nullable, nonatomic, retain) NSData *targetImage;
 
 @end
 

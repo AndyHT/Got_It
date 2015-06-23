@@ -14,7 +14,7 @@
 		EF065C101B2927830042A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF065C0E1B2927830042A613 /* LaunchScreen.storyboard */; };
 		EF065C1B1B2927830042A613 /* GotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C1A1B2927830042A613 /* GotTests.swift */; };
 		EF065C261B2927830042A613 /* GotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF065C251B2927830042A613 /* GotUITests.swift */; };
-		EF06600A1B2CE857000D55AF /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0660091B2CE857000D55AF /* Coordinates.m */; };
+		EF2395DE1B392F0500E96C67 /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2395DD1B392F0500E96C67 /* Coordinates.m */; };
 		EF28EAEC1B2E611C00359DDC /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28EAEB1B2E611C00359DDC /* FindViewController.swift */; };
 		EF6E77411B303CB200885FC4 /* GuidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6E77401B303CB200885FC4 /* GuidePageViewController.swift */; };
 		EF6E77431B303D1200885FC4 /* GuideContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6E77421B303D1200885FC4 /* GuideContentViewController.swift */; };
@@ -57,9 +57,9 @@
 		EF065C211B2927830042A613 /* GotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF065C251B2927830042A613 /* GotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotUITests.swift; sourceTree = "<group>"; };
 		EF065C271B2927830042A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF0660071B2CE857000D55AF /* Coordinates+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coordinates+CoreDataProperties.h"; sourceTree = "<group>"; };
-		EF0660081B2CE857000D55AF /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
-		EF0660091B2CE857000D55AF /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
+		EF2395DB1B392F0500E96C67 /* Coordinates+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coordinates+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EF2395DC1B392F0500E96C67 /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		EF2395DD1B392F0500E96C67 /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
 		EF28EAEB1B2E611C00359DDC /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		EF6E77401B303CB200885FC4 /* GuidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePageViewController.swift; sourceTree = "<group>"; };
 		EF6E77421B303D1200885FC4 /* GuideContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideContentViewController.swift; sourceTree = "<group>"; };
@@ -136,9 +136,9 @@
 				EF065C111B2927830042A613 /* Info.plist */,
 				EFDB48ED1B2C6B3F00CE4740 /* Got.xcdatamodeld */,
 				EFDB48F01B2C6BC900CE4740 /* Got-Bridging-Header.h */,
-				EF0660071B2CE857000D55AF /* Coordinates+CoreDataProperties.h */,
-				EF0660081B2CE857000D55AF /* Coordinates.h */,
-				EF0660091B2CE857000D55AF /* Coordinates.m */,
+				EF2395DB1B392F0500E96C67 /* Coordinates+CoreDataProperties.h */,
+				EF2395DC1B392F0500E96C67 /* Coordinates.h */,
+				EF2395DD1B392F0500E96C67 /* Coordinates.m */,
 			);
 			path = Got;
 			sourceTree = "<group>";
@@ -296,9 +296,9 @@
 				EFF9BED41B2ACCCB0019D8C7 /* FindTableViewController.swift in Sources */,
 				EFB6BF9E1B2EFA9100FF9421 /* DeviceVersion.swift in Sources */,
 				EF6E77411B303CB200885FC4 /* GuidePageViewController.swift in Sources */,
+				EF2395DE1B392F0500E96C67 /* Coordinates.m in Sources */,
 				EFF5ADEC1B2AE80400D49822 /* MarkViewController.swift in Sources */,
 				EFB6BFA61B2F1F2700FF9421 /* Calculator.swift in Sources */,
-				EF06600A1B2CE857000D55AF /* Coordinates.m in Sources */,
 				EF6E77431B303D1200885FC4 /* GuideContentViewController.swift in Sources */,
 				EFF5ADEE1B2AEA7100D49822 /* DetailViewController.swift in Sources */,
 				EF28EAEC1B2E611C00359DDC /* FindViewController.swift in Sources */,

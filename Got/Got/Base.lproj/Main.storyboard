@@ -182,7 +182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Pv-1q-GrC">
-                                <rect key="frame" x="229" y="107" width="60" height="60"/>
+                                <rect key="frame" x="199" y="89" width="90" height="90"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,6 +198,7 @@
                         <outlet property="currentDistanceLabel" destination="YcZ-YA-wvZ" id="zv5-eh-tsF"/>
                         <outlet property="distanceLabel" destination="jf3-iH-OtP" id="W5o-vA-QMj"/>
                         <outlet property="myAngle" destination="san-bq-XcI" id="k0f-q6-5L1"/>
+                        <outlet property="targetImage" destination="9Pv-1q-GrC" id="hUi-PC-sPD"/>
                         <outlet property="targetPoint" destination="LHn-zg-HvD" id="LQo-hf-0RO"/>
                     </connections>
                 </viewController>

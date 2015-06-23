@@ -165,7 +165,6 @@ class MarkViewController: UIViewController, CLLocationManagerDelegate, UIImagePi
         } else {
             chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         }
-//        self.saveImage(chosenImage, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName: "currentImage.png")
         cameraView.contentMode = .ScaleAspectFit
         cameraView.hidden = false
         cameraView.image = chosenImage

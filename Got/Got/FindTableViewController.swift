@@ -103,12 +103,13 @@ class FindTableViewController: UITableViewController {
         
         let title = cell.viewWithTag(101) as! UILabel
         let date = cell.viewWithTag(102) as! UILabel
-//        let imageInCell = cell.viewWithTag(103) as! UIImageView
+        let imageInCell = cell.viewWithTag(103) as! UIImageView
         
         title.text = markItem.valueForKey("id") as! String?
-        
-        //需要从沙盒中取出图片
-//        imageInCell.image = UIImage(named: "")
+
+        //得到image
+        let imageInCoreData = markItem.valueForKey("targetImage") as! NSData
+        imageInCell.image = UIImage(data: imageInCoreData)
         
         //当读到没有date的数据时代码会crash
         let locale = NSLocale.currentLocale()
@@ -189,7 +190,11 @@ class FindTableViewController: UITableViewController {
             let targetLatitude = targetItem.valueForKey("latitude") as! Double
             let targetLongitude = targetItem.valueForKey("longitude") as! Double
             findView.targetLocation = CLLocation(latitude: targetLatitude, longitude: targetLongitude)
+            
             findView.targetTitle = targetItem.valueForKey("id") as? String
+            
+            let targetImage = targetItem.valueForKey("targetImage") as! NSData
+            findView.targetImageData = targetImage
         }
     }
     

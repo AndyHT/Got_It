@@ -17,6 +17,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     var targetTitle:String? = nil
     var currentLocation:CLLocation? = nil
     var targetLocation:CLLocation? = nil
+    var targetImageData:NSData? = nil
     
     @IBOutlet weak var currentDistanceLabel: UILabel!
     
@@ -25,6 +26,9 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var targetPoint: UIImageView!
     
     @IBOutlet weak var distanceLabel: UILabel!
+    
+    @IBOutlet weak var targetImage: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +53,10 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.headingFilter = kCLHeadingFilterNone
         
+        
+        if let image = targetImageData {
+            targetImage.image = UIImage(data: image)
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
